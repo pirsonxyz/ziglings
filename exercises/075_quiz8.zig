@@ -49,7 +49,7 @@ const Path = struct {
 //
 // Please fill in the body of this function!
 fn makePath(from: *Place, to: *Place, dist: u8) Path {
-
+    return Path{ .from = from, .to = to, .dist = dist };
 }
 
 // Using our new function, these path definitions take up considerably less
@@ -74,7 +74,7 @@ const f_paths = [_]Path{makePath(&f, &d, 7)};
 //    b -> (a[2] d[1])
 //    c -> (d[3] e[2])
 //    ...
-//
+// TODO:
 // Feel free to implement something like that as a SUPER BONUS EXERCISE!
 
 const TripItem = union(enum) {

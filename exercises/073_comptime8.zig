@@ -32,7 +32,7 @@ const llamas = [llama_count]u32{ 5, 10, 15, 20, 25 };
 pub fn main() void {
     // We meant to fetch the last llama. Please fix this simple
     // mistake so the assertion no longer fails.
-    const my_llama = getLlama(5);
+    const my_llama = comptime getLlama(4);
 
     print("My llama value is {}.\n", .{my_llama});
 }
@@ -58,7 +58,7 @@ fn getLlama(i: usize) u32 {
 // Fun fact: this assert() function is identical to
 // std.debug.assert() from the Zig Standard Library.
 fn assert(ok: bool) void {
-    if (!ok) unreachable;
+    if (!ok) @compileError("Assertion failed llamas are sad :(");
 }
 //
 // Bonus fun fact: I accidentally replaced all instances of 'foo'

@@ -80,7 +80,7 @@ pub fn main() !void {
     y ^= x;
 
     // What must be written here?
-    ???;
+    x ^= y;
 
     print("x = {d}; y = {d}\n", .{ x, y });
 }
@@ -88,7 +88,7 @@ pub fn main() !void {
 // This variable swap takes advantage of the fact that the value resulting
 // from the xor of two values contains both of these values.
 // This circumstance was (and still is) sometimes used for encryption.
-// Value XOR Key = Crypto. => Crypto XOR Key = Value.
+// Value XOR Key = Crypto. => Crypto XOR
 // Since this can be swapped arbitrarily, you can swap two variables in this way.
 //
 // For Crypto it is better not to use this, but in sorting algorithms like
